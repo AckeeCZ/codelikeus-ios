@@ -7,3 +7,8 @@ target 'CodeLikeUs' do
   pod 'Firebase/Core'
   pod 'Firebase/Database'
 end
+
+target 'CodeLikeUsTests' do
+  pod 'Firebase/Core'
+  pod 'Firebase/Database'
+end
