@@ -1,0 +1,5 @@
+github "SnapKit/SnapKit" ~> 4.0.0
+github "ReactiveCocoa/ReactiveSwift"
+github "ReactiveCocoa/ReactiveCocoa"
+github "Alamofire/Alamofire"
+github "realm/realm-cocoa"
