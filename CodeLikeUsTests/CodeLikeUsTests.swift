@@ -7,11 +7,16 @@
 //
 
 import XCTest
+@testable import CodeLikeUs
 
 class CodeLikeUsTests: XCTestCase {
     
+    
+    
     override func setUp() {
         super.setUp()
+        
+        
         // Put setup code here. This method is called before the invocation of each test method in the class.
     }
     
@@ -20,16 +25,32 @@ class CodeLikeUsTests: XCTestCase {
         super.tearDown()
     }
     
-    func testExample() {
+    func testViewModelNotEmpty() {
+        
+        let vm = RecipesListViewModel(apiService: DummyCookbookAPIService())
+        vm.loadRecipes()
+        XCTAssertFalse(vm.recipes.value.isEmpty)
+        
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
     }
     
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+    func testRefreshingChangesState() {
+        let vm = RecipesListViewModel(apiService: DummyCookbookAPIService())
+        var results : [Bool] = []
+        
+        
+        let expectation = self.expectation(description: "check refresh")
+        
+        vm.isRefreshing.producer.startWithValues { value in
+            results.append(value)
         }
+        vm.loadRecipes()
+        expectation.fulfill()
+        self.waitForExpectations(timeout: 1.0, handler: { _ in
+            XCTAssertEqual(results, [false,true,false])
+        })
+        
     }
     
 }

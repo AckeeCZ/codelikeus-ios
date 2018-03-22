@@ -10,4 +10,11 @@ import Foundation
 import ReactiveSwift
 @testable import CodeLikeUs
 
-
+class DummyCookbookAPIService : CookbookAPIServicing {
+    
+    func getRecipes() -> SignalProducer<[Recipe], RequestError> {
+        return SignalProducer(value: [Recipe(name:"Dummy Receipt")])
+    }
+    
+    
+}
