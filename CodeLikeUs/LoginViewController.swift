@@ -8,8 +8,9 @@
 //
 
 import UIKit
+import SnapKit
 
-class ViewController: UIViewController {
+class LoginViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
