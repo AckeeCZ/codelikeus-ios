@@ -21,7 +21,12 @@
 		79A471ED2023606B00553F42 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79A471EB2023606B00553F42 /* Realm.framework */; };
 		79D6DC0D202C913C00E879CC /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79D6DC0C202C913C00E879CC /* SignUpViewController.swift */; };
 		79D6DC0F202C917200E879CC /* Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79D6DC0E202C917200E879CC /* Styles.swift */; };
+		B4230E1A20613C0C00495C5F /* RecipesListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4230E1920613C0C00495C5F /* RecipesListViewModel.swift */; };
+		B4230E1D20613C9A00495C5F /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4230E1C20613C9A00495C5F /* Recipe.swift */; };
 		B46304CB20612C5D002F8F29 /* SignupViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B46304CA20612C5D002F8F29 /* SignupViewModel.swift */; };
+		B46304D120613A77002F8F29 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B46304CE20613A77002F8F29 /* APIService.swift */; };
+		B46304D220613A77002F8F29 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = B46304CF20613A77002F8F29 /* Network.swift */; };
+		B46304D420613BD0002F8F29 /* RecipesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B46304D320613BD0002F8F29 /* RecipesListViewController.swift */; };
 		F777151528FF1536C7B81C87 /* Pods_CodeLikeUs.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC9EA000C00A1F48F7729EA0 /* Pods_CodeLikeUs.framework */; };
 /* End PBXBuildFile section */
 
@@ -47,7 +52,12 @@
 		79D6DC0C202C913C00E879CC /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		79D6DC0E202C917200E879CC /* Styles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Styles.swift; sourceTree = "<group>"; };
 		AAE837E14D61AA778E61E59A /* Pods-CodeLikeUs.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CodeLikeUs.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CodeLikeUs/Pods-CodeLikeUs.debug.xcconfig"; sourceTree = "<group>"; };
+		B4230E1920613C0C00495C5F /* RecipesListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesListViewModel.swift; sourceTree = "<group>"; };
+		B4230E1C20613C9A00495C5F /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
 		B46304CA20612C5D002F8F29 /* SignupViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewModel.swift; sourceTree = "<group>"; };
+		B46304CE20613A77002F8F29 /* APIService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
+		B46304CF20613A77002F8F29 /* Network.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
+		B46304D320613BD0002F8F29 /* RecipesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesListViewController.swift; sourceTree = "<group>"; };
 		EC9EA000C00A1F48F7729EA0 /* Pods_CodeLikeUs.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CodeLikeUs.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -91,12 +101,12 @@
 		791E7CA1202353710069B58C /* CodeLikeUs */ = {
 			isa = PBXGroup;
 			children = (
+				B4230E1B20613C8F00495C5F /* Model */,
+				B46304CC20613A63002F8F29 /* Networking */,
 				B46304C920612C43002F8F29 /* ViewController */,
 				B46304C820612C32002F8F29 /* ViewModel */,
 				79A471E520235ED800553F42 /* Resources */,
 				791E7CA2202353710069B58C /* AppDelegate.swift */,
-				791E7CA4202353710069B58C /* LoginViewController.swift */,
-				79D6DC0C202C913C00E879CC /* SignUpViewController.swift */,
 				79D6DC0E202C917200E879CC /* Styles.swift */,
 			);
 			path = CodeLikeUs;
@@ -131,10 +141,19 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		B4230E1B20613C8F00495C5F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B4230E1C20613C9A00495C5F /* Recipe.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		B46304C820612C32002F8F29 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
 				B46304CA20612C5D002F8F29 /* SignupViewModel.swift */,
+				B4230E1920613C0C00495C5F /* RecipesListViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -142,8 +161,20 @@
 		B46304C920612C43002F8F29 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				79D6DC0C202C913C00E879CC /* SignUpViewController.swift */,
+				791E7CA4202353710069B58C /* LoginViewController.swift */,
+				B46304D320613BD0002F8F29 /* RecipesListViewController.swift */,
 			);
 			path = ViewController;
+			sourceTree = "<group>";
+		};
+		B46304CC20613A63002F8F29 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				B46304CE20613A77002F8F29 /* APIService.swift */,
+				B46304CF20613A77002F8F29 /* Network.swift */,
+			);
+			path = Networking;
 			sourceTree = "<group>";
 		};
 		DF74561BF694C48E7FDC050A /* Pods */ = {
@@ -308,10 +339,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				79D6DC0D202C913C00E879CC /* SignUpViewController.swift in Sources */,
+				B46304D120613A77002F8F29 /* APIService.swift in Sources */,
+				B4230E1A20613C0C00495C5F /* RecipesListViewModel.swift in Sources */,
+				B46304D220613A77002F8F29 /* Network.swift in Sources */,
 				B46304CB20612C5D002F8F29 /* SignupViewModel.swift in Sources */,
 				791E7CA5202353710069B58C /* LoginViewController.swift in Sources */,
+				B46304D420613BD0002F8F29 /* RecipesListViewController.swift in Sources */,
 				791E7CA3202353710069B58C /* AppDelegate.swift in Sources */,
 				79D6DC0F202C917200E879CC /* Styles.swift in Sources */,
+				B4230E1D20613C9A00495C5F /* Recipe.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
