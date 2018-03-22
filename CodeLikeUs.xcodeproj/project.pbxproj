@@ -27,6 +27,8 @@
 		B46304D120613A77002F8F29 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B46304CE20613A77002F8F29 /* APIService.swift */; };
 		B46304D220613A77002F8F29 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = B46304CF20613A77002F8F29 /* Network.swift */; };
 		B46304D420613BD0002F8F29 /* RecipesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B46304D320613BD0002F8F29 /* RecipesListViewController.swift */; };
+		B4EDDD1C20643885006688ED /* CookbookAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4EDDD1B20643884006688ED /* CookbookAPIService.swift */; };
+		B4EDDD1E206439F9006688ED /* Reqres.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4EDDD1D206439F8006688ED /* Reqres.framework */; };
 		F777151528FF1536C7B81C87 /* Pods_CodeLikeUs.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC9EA000C00A1F48F7729EA0 /* Pods_CodeLikeUs.framework */; };
 /* End PBXBuildFile section */
 
@@ -58,6 +60,8 @@
 		B46304CE20613A77002F8F29 /* APIService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		B46304CF20613A77002F8F29 /* Network.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		B46304D320613BD0002F8F29 /* RecipesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesListViewController.swift; sourceTree = "<group>"; };
+		B4EDDD1B20643884006688ED /* CookbookAPIService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CookbookAPIService.swift; sourceTree = "<group>"; };
+		B4EDDD1D206439F8006688ED /* Reqres.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Reqres.framework; path = Carthage/Build/iOS/Reqres.framework; sourceTree = "<group>"; };
 		EC9EA000C00A1F48F7729EA0 /* Pods_CodeLikeUs.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CodeLikeUs.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -66,6 +70,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B4EDDD1E206439F9006688ED /* Reqres.framework in Frameworks */,
 				791E7CBC202357A40069B58C /* ReactiveSwift.framework in Frameworks */,
 				791E7CBD202357A40069B58C /* Result.framework in Frameworks */,
 				791E7CBE202357A40069B58C /* SnapKit.framework in Frameworks */,
@@ -115,6 +120,7 @@
 		791E7CB5202357A30069B58C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B4EDDD1D206439F8006688ED /* Reqres.framework */,
 				79A471EB2023606B00553F42 /* Realm.framework */,
 				79A471EA2023606B00553F42 /* RealmSwift.framework */,
 				79A471E72023605C00553F42 /* Realm.framework.dSYM */,
@@ -171,6 +177,7 @@
 		B46304CC20613A63002F8F29 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				B4EDDD1B20643884006688ED /* CookbookAPIService.swift */,
 				B46304CE20613A77002F8F29 /* APIService.swift */,
 				B46304CF20613A77002F8F29 /* Network.swift */,
 			);
@@ -301,6 +308,7 @@
 				"$(SRCROOT)/Carthage/Build/iOS/SnapKit.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/RealmSwift.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Realm.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/ReqRes.framework",
 			);
 			name = "Carthage Copy Frameworks";
 			outputPaths = (
@@ -311,6 +319,7 @@
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/SnapKit.framework",
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/RealmSwift.framework",
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Realm.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Reqres.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -340,6 +349,7 @@
 			files = (
 				79D6DC0D202C913C00E879CC /* SignUpViewController.swift in Sources */,
 				B46304D120613A77002F8F29 /* APIService.swift in Sources */,
+				B4EDDD1C20643885006688ED /* CookbookAPIService.swift in Sources */,
 				B4230E1A20613C0C00495C5F /* RecipesListViewModel.swift in Sources */,
 				B46304D220613A77002F8F29 /* Network.swift in Sources */,
 				B46304CB20612C5D002F8F29 /* SignupViewModel.swift in Sources */,

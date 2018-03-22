@@ -22,7 +22,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         FirebaseApp.configure()
 
         window = UIWindow(frame: UIScreen.main.bounds)
-        window?.rootViewController = SignUpViewController(viewModel: SignupViewModel())
+        let vm = RecipesListViewModel(apiService: CookbookAPIService(network: Network(), authHandler: nil))
+        window?.rootViewController = RecipesListViewController(viewModel: vm)
         window?.makeKeyAndVisible()
         return true
     }
