@@ -12,6 +12,7 @@ import SnapKit
 
 protocol LoginFlowDelegate : class {
     func didTapSwitchToSignUp()
+    func didTapReset()
 }
 
 class LoginViewController: UIViewController {
@@ -37,15 +38,17 @@ class LoginViewController: UIViewController {
             passwordTextField,
             ])
         let loginButton = UIButton()
+        let resetButton = UIButton()
         let goToSignUpButton = UIButton()
         let buttonsHStack = UIStackView(arrangedSubviews: [
-            loginButton,
             goToSignUpButton,
+            resetButton
             ])
         let vStack = UIStackView(arrangedSubviews: [
             messageLabel,
             usernameVStack,
             passwordVStack,
+            loginButton,
             buttonsHStack,
             ])
 
@@ -90,6 +93,12 @@ class LoginViewController: UIViewController {
         self.loginButton = loginButton
         goToSignUpButton.setTitle("Go to Sign Up", for: .normal)
         goToSignUpButton.setTitleColor(.blue, for: .normal)
+        
+        resetButton.setTitle("Reset password", for: .normal)
+        resetButton.setTitleColor(.red, for: .normal)
+        self.resetButton = resetButton
+        
+        
         self.goToSignUpButton = goToSignUpButton
         buttonsHStack.axis = .horizontal
         buttonsHStack.spacing = smallHSpacing
@@ -113,12 +122,18 @@ class LoginViewController: UIViewController {
     weak var passwordTextField: UITextField!
     weak var loginButton: UIButton!
     weak var goToSignUpButton: UIButton!
+    weak var resetButton: UIButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         goToSignUpButton.addTarget(self, action: #selector(goToSignUpTapped), for: .touchUpInside)
+        resetButton.addTarget(self, action: #selector(didTapReset), for: .touchUpInside)
 
+    }
+    
+    @objc func didTapReset() {
+        flowDelegate?.didTapReset()
     }
 
     @objc func goToSignUpTapped() {

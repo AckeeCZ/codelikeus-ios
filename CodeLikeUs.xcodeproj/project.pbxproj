@@ -31,6 +31,7 @@
 		B4EDDD1E206439F9006688ED /* Reqres.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4EDDD1D206439F8006688ED /* Reqres.framework */; };
 		B4EDDD2020643B0C006688ED /* Firebase+Reactive.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4EDDD1F20643B0C006688ED /* Firebase+Reactive.swift */; };
 		B4EDDD2220643CB8006688ED /* MainFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4EDDD2120643CB8006688ED /* MainFlowController.swift */; };
+		B4EDDD2420643F68006688ED /* ResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4EDDD2320643F68006688ED /* ResetPasswordViewController.swift */; };
 		F777151528FF1536C7B81C87 /* Pods_CodeLikeUs.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC9EA000C00A1F48F7729EA0 /* Pods_CodeLikeUs.framework */; };
 /* End PBXBuildFile section */
 
@@ -66,6 +67,7 @@
 		B4EDDD1D206439F8006688ED /* Reqres.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Reqres.framework; path = Carthage/Build/iOS/Reqres.framework; sourceTree = "<group>"; };
 		B4EDDD1F20643B0C006688ED /* Firebase+Reactive.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Firebase+Reactive.swift"; sourceTree = "<group>"; };
 		B4EDDD2120643CB8006688ED /* MainFlowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainFlowController.swift; sourceTree = "<group>"; };
+		B4EDDD2320643F68006688ED /* ResetPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewController.swift; sourceTree = "<group>"; };
 		EC9EA000C00A1F48F7729EA0 /* Pods_CodeLikeUs.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CodeLikeUs.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -189,6 +191,7 @@
 		B46304C920612C43002F8F29 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				B4EDDD2320643F68006688ED /* ResetPasswordViewController.swift */,
 				79D6DC0C202C913C00E879CC /* SignUpViewController.swift */,
 				791E7CA4202353710069B58C /* LoginViewController.swift */,
 				B46304D320613BD0002F8F29 /* RecipesListViewController.swift */,
@@ -382,6 +385,7 @@
 				B4EDDD2020643B0C006688ED /* Firebase+Reactive.swift in Sources */,
 				79D6DC0F202C917200E879CC /* Styles.swift in Sources */,
 				B4230E1D20613C9A00495C5F /* Recipe.swift in Sources */,
+				B4EDDD2420643F68006688ED /* ResetPasswordViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

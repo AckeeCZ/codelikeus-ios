@@ -39,4 +39,16 @@ extension MainFlowController : LoginFlowDelegate {
         signup.flowDelegate = self
         self.navigationController.viewControllers = [signup]
     }
+    
+    func didTapReset() {
+        let reset = ResetPasswordViewController()
+        reset.flowDelegate = self
+        self.navigationController.present(UINavigationController(rootViewController: reset), animated: true, completion: nil)
+    }
+}
+
+extension MainFlowController : ResetPasswordFlowDelegate {
+    func didTapDissmiss() {
+        self.navigationController.dismiss(animated: true, completion: nil)
+    }
 }
