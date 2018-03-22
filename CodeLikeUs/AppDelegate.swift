@@ -13,6 +13,8 @@ import Firebase
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    
+    var flowController : MainFlowController!
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
@@ -22,10 +24,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         FirebaseApp.configure()
 
         window = UIWindow(frame: UIScreen.main.bounds)
-        //let vm = RecipesListViewModel(apiService: CookbookAPIService(network: Network(), authHandler: nil))
-        let vm = FirebaseRecipesListViewModel()
-        window?.rootViewController = RecipesListViewController(viewModel: vm)
+        let navController = UINavigationController()
+        flowController = MainFlowController(navigationController: navController)
+        window?.rootViewController = navController
         window?.makeKeyAndVisible()
+        flowController.start()
+
         return true
     }
 

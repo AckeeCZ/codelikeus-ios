@@ -10,7 +10,13 @@
 import UIKit
 import SnapKit
 
+protocol LoginFlowDelegate : class {
+    func didTapSwitchToSignUp()
+}
+
 class LoginViewController: UIViewController {
+    
+    weak var flowDelegate : LoginFlowDelegate?
 
     override func loadView() {
         super.loadView()
@@ -116,11 +122,7 @@ class LoginViewController: UIViewController {
     }
 
     @objc func goToSignUpTapped() {
-        let signUpVC = SignUpViewController(viewModel: SignupViewModel())
-        UIView.transition(from: view, to: signUpVC.view, duration: 1, options: [.transitionCrossDissolve], completion: {
-            _ in
-            UIApplication.shared.keyWindow?.rootViewController = signUpVC
-        })
+        flowDelegate?.didTapSwitchToSignUp()
     }
 
 }

@@ -30,6 +30,7 @@
 		B4EDDD1C20643885006688ED /* CookbookAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4EDDD1B20643884006688ED /* CookbookAPIService.swift */; };
 		B4EDDD1E206439F9006688ED /* Reqres.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4EDDD1D206439F8006688ED /* Reqres.framework */; };
 		B4EDDD2020643B0C006688ED /* Firebase+Reactive.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4EDDD1F20643B0C006688ED /* Firebase+Reactive.swift */; };
+		B4EDDD2220643CB8006688ED /* MainFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4EDDD2120643CB8006688ED /* MainFlowController.swift */; };
 		F777151528FF1536C7B81C87 /* Pods_CodeLikeUs.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC9EA000C00A1F48F7729EA0 /* Pods_CodeLikeUs.framework */; };
 /* End PBXBuildFile section */
 
@@ -64,6 +65,7 @@
 		B4EDDD1B20643884006688ED /* CookbookAPIService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CookbookAPIService.swift; sourceTree = "<group>"; };
 		B4EDDD1D206439F8006688ED /* Reqres.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Reqres.framework; path = Carthage/Build/iOS/Reqres.framework; sourceTree = "<group>"; };
 		B4EDDD1F20643B0C006688ED /* Firebase+Reactive.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Firebase+Reactive.swift"; sourceTree = "<group>"; };
+		B4EDDD2120643CB8006688ED /* MainFlowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainFlowController.swift; sourceTree = "<group>"; };
 		EC9EA000C00A1F48F7729EA0 /* Pods_CodeLikeUs.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CodeLikeUs.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -108,6 +110,7 @@
 		791E7CA1202353710069B58C /* CodeLikeUs */ = {
 			isa = PBXGroup;
 			children = (
+				B4230E232063E17200495C5F /* Flow Controller */,
 				B4230E20206152A700495C5F /* Extensions */,
 				B4230E1B20613C8F00495C5F /* Model */,
 				B46304CC20613A63002F8F29 /* Networking */,
@@ -164,6 +167,14 @@
 				B4EDDD1F20643B0C006688ED /* Firebase+Reactive.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		B4230E232063E17200495C5F /* Flow Controller */ = {
+			isa = PBXGroup;
+			children = (
+				B4EDDD2120643CB8006688ED /* MainFlowController.swift */,
+			);
+			path = "Flow Controller";
 			sourceTree = "<group>";
 		};
 		B46304C820612C32002F8F29 /* ViewModel */ = {
@@ -365,6 +376,7 @@
 				B46304D220613A77002F8F29 /* Network.swift in Sources */,
 				B46304CB20612C5D002F8F29 /* SignupViewModel.swift in Sources */,
 				791E7CA5202353710069B58C /* LoginViewController.swift in Sources */,
+				B4EDDD2220643CB8006688ED /* MainFlowController.swift in Sources */,
 				B46304D420613BD0002F8F29 /* RecipesListViewController.swift in Sources */,
 				791E7CA3202353710069B58C /* AppDelegate.swift in Sources */,
 				B4EDDD2020643B0C006688ED /* Firebase+Reactive.swift in Sources */,

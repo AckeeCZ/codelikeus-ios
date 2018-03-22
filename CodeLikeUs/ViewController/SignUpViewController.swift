@@ -13,10 +13,16 @@ import ReactiveSwift
 import ReactiveCocoa
 import enum Result.NoError
 
+protocol SignupFlowDelegate : class {
+    func didTapSwitchToLogin()
+}
+
 class SignUpViewController: UIViewController {
     
     
     let viewModel : SignupViewModeling
+    
+    weak var flowDelegate : SignupFlowDelegate?
     
     init(viewModel: SignupViewModeling) {
         self.viewModel = viewModel
@@ -163,11 +169,7 @@ class SignUpViewController: UIViewController {
     
 
     @objc func goToLoginTapped() {
-        let loginVC = LoginViewController()
-        UIView.transition(from: view, to: loginVC.view, duration: 1, options: [.transitionCrossDissolve], completion: {
-            _ in
-            UIApplication.shared.keyWindow?.rootViewController = loginVC
-        })
+        flowDelegate?.didTapSwitchToLogin()
     }
     
     @objc func signupTapped() {
