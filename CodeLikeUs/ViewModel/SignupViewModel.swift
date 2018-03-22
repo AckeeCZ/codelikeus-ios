@@ -16,7 +16,9 @@ protocol SignupViewModeling {
     var text : MutableProperty<String> {get}
     var signUpSucceeded : Signal<(),NoError> {get}
     var signUpErrors : Signal<String,NoError> {get}
-    
+
+    var signUpAction : Action<(),(),CheckAvailabilityError> {get}
+        
     func signUp()
     func changeText(newText : String)
 }
@@ -26,8 +28,13 @@ class SignupViewModel : SignupViewModeling {
     let (signUpSucceeded, signUpObserver) = Signal<(),NoError>.pipe()
     let text = MutableProperty<String>("")
     
+    lazy var signUpAction : Action<(),(),CheckAvailabilityError> = {
+        return Action<(),(),CheckAvailabilityError> {
+            return signUpRequest(username: self.text.value).observe(on: UIScheduler())
+        }
+    }()
+    
     init() {
-        
     }
     
     

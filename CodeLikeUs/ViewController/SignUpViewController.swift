@@ -141,13 +141,17 @@ class SignUpViewController: UIViewController {
         
         usernameTextField.reactive.text <~ viewModel.text
         
-        viewModel.signUpErrors.signal.observeValues { [unowned self] (error) in
-            self.presentErrorAlert(error: error)
+        
+        viewModel.signUpAction.errors.observeValues { [unowned self] (error) in
+            self.presentErrorAlert(error: error.displayString)
         }
         
-        viewModel.signUpSucceeded.signal.observeValues { [unowned self] _ in
+        
+        viewModel.signUpAction.values.observeValues { [unowned self] _ in
             self.show(UIViewController(), sender: self)
         }
+        
+        signUpButton.reactive.isEnabled <~ viewModel.signUpAction.isExecuting.map(!)
     }
     
     func presentErrorAlert(error: String) {
@@ -167,7 +171,7 @@ class SignUpViewController: UIViewController {
     }
     
     @objc func signupTapped() {
-        viewModel.signUp()
+        viewModel.signUpAction.apply().start()
     }
 
 }
