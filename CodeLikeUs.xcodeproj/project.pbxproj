@@ -21,6 +21,7 @@
 		79A471ED2023606B00553F42 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79A471EB2023606B00553F42 /* Realm.framework */; };
 		79D6DC0D202C913C00E879CC /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79D6DC0C202C913C00E879CC /* SignUpViewController.swift */; };
 		79D6DC0F202C917200E879CC /* Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79D6DC0E202C917200E879CC /* Styles.swift */; };
+		B46304CB20612C5D002F8F29 /* SignupViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B46304CA20612C5D002F8F29 /* SignupViewModel.swift */; };
 		F777151528FF1536C7B81C87 /* Pods_CodeLikeUs.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC9EA000C00A1F48F7729EA0 /* Pods_CodeLikeUs.framework */; };
 /* End PBXBuildFile section */
 
@@ -46,6 +47,7 @@
 		79D6DC0C202C913C00E879CC /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		79D6DC0E202C917200E879CC /* Styles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Styles.swift; sourceTree = "<group>"; };
 		AAE837E14D61AA778E61E59A /* Pods-CodeLikeUs.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CodeLikeUs.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CodeLikeUs/Pods-CodeLikeUs.debug.xcconfig"; sourceTree = "<group>"; };
+		B46304CA20612C5D002F8F29 /* SignupViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewModel.swift; sourceTree = "<group>"; };
 		EC9EA000C00A1F48F7729EA0 /* Pods_CodeLikeUs.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CodeLikeUs.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -89,6 +91,8 @@
 		791E7CA1202353710069B58C /* CodeLikeUs */ = {
 			isa = PBXGroup;
 			children = (
+				B46304C920612C43002F8F29 /* ViewController */,
+				B46304C820612C32002F8F29 /* ViewModel */,
 				79A471E520235ED800553F42 /* Resources */,
 				791E7CA2202353710069B58C /* AppDelegate.swift */,
 				791E7CA4202353710069B58C /* LoginViewController.swift */,
@@ -125,6 +129,21 @@
 				79A471E320235ED400553F42 /* GoogleService-Info.plist */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		B46304C820612C32002F8F29 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				B46304CA20612C5D002F8F29 /* SignupViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		B46304C920612C43002F8F29 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewController;
 			sourceTree = "<group>";
 		};
 		DF74561BF694C48E7FDC050A /* Pods */ = {
@@ -289,6 +308,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				79D6DC0D202C913C00E879CC /* SignUpViewController.swift in Sources */,
+				B46304CB20612C5D002F8F29 /* SignupViewModel.swift in Sources */,
 				791E7CA5202353710069B58C /* LoginViewController.swift in Sources */,
 				791E7CA3202353710069B58C /* AppDelegate.swift in Sources */,
 				79D6DC0F202C917200E879CC /* Styles.swift in Sources */,
@@ -422,14 +442,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 76EHURWG2W;
+				DEVELOPMENT_TEAM = QXF4DNYBVJ;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = CodeLikeUs/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = cz.ackee.CodeLikeUs;
+				PRODUCT_BUNDLE_IDENTIFIER = cz.ackee.CodeLikeUs2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -442,14 +462,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 76EHURWG2W;
+				DEVELOPMENT_TEAM = QXF4DNYBVJ;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = CodeLikeUs/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = cz.ackee.CodeLikeUs;
+				PRODUCT_BUNDLE_IDENTIFIER = cz.ackee.CodeLikeUs2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
