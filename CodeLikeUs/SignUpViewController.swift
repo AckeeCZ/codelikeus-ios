@@ -9,6 +9,9 @@
 
 import UIKit
 import SnapKit
+import ReactiveSwift
+import ReactiveCocoa
+import enum Result.NoError
 
 class SignUpViewController: UIViewController {
 
@@ -55,12 +58,13 @@ class SignUpViewController: UIViewController {
 
         messageLabel.textAlignment = .center
         messageLabel.font = .systemFont(ofSize: 30)
-        messageLabel.text = "Sign Up"
+        messageLabel.text = ""
         self.messageLabel = messageLabel
         usernameDescriptionLabel.makeDescription()
         usernameDescriptionLabel.text = "Username"
         usernameTextField.placeholder = "dominikvesely"
         usernameTextField.makeDefault()
+        usernameTextField.autocorrectionType = .no
         self.usernameTextField = usernameTextField
         usernameVStack.axis = .vertical
         usernameVStack.spacing = smallVSpacing
@@ -113,6 +117,47 @@ class SignUpViewController: UIViewController {
 
         goToLoginButton.addTarget(self, action: #selector(goToLoginTapped), for: .touchUpInside)
 
+        let strings = ["code", "like", "us"]
+        //imperative programming
+        var longUppercaseStrings: [String] = []
+        for s in strings {
+            if s.count > 2 {
+                longUppercaseStrings.append(s.uppercased())
+            }
+        }
+        print(longUppercaseStrings)
+
+        //functional programming
+        print(strings.filter { $0.count > 2 }.map { $0.uppercased() })
+
+//        let stringsSignal = SignalProducer(strings)
+        let stringsSignal = usernameTextField.reactive.continuousTextValues.map { $0 ?? "" }
+        //            .filter { $0.count > 2 }
+        //            .map { $0.uppercased() }
+//            .reduce("", +)
+//            .scan("", +)
+            .throttle(0.5, on: QueueScheduler.main)
+            .flatMap(.latest)  {
+                checkAvailability(username: $0)
+                    .retry(upTo: 1)
+                    .flatMapError { error -> SignalProducer<String,NoError> in
+                        switch error {
+                        case let .invalidUsername(reason):
+                            return SignalProducer(value: reason)
+                        case .networkError:
+                            return SignalProducer(value: "network error occurred")
+                        }
+                }
+            }
+            .observe(on: UIScheduler())
+
+
+        messageLabel.reactive.text <~ stringsSignal
+
+
+
+
+
     }
 
     @objc func goToLoginTapped() {
@@ -124,3 +169,40 @@ class SignUpViewController: UIViewController {
     }
 
 }
+
+//func checkAvailability(username: String) -> SignalProducer<String, NoError> {
+//    return SignalProducer<Bool, NoError> { observer, _ in
+//        DispatchQueue.global(qos: .userInitiated).async {
+//            sleep(1)
+//            observer.send(value: true)
+//        }
+//        }.map {
+//            "\(username) is \($0 ? "" : "NOT") available."
+//    }
+//}
+
+enum CheckAvailabilityError: Error {
+    case invalidUsername(String)
+    case networkError
+}
+
+func checkAvailability(username: String) -> SignalProducer<String, CheckAvailabilityError> {
+    guard !username.isEmpty else { return SignalProducer(error: .invalidUsername("cant be empty"))  }
+    return SignalProducer<Bool, CheckAvailabilityError> { observer, _ in
+        DispatchQueue.global(qos: .userInitiated).async {
+            sleep(1)
+            guard arc4random_uniform(3) != 0 else {
+                observer.send(error: .networkError)
+                return
+            }
+            guard username.lowercased() != "dv" else {
+                observer.send(value: false)
+                return
+            }
+            observer.send(value: true)
+        }
+        }.map {
+            "\(username) is \($0 ? "" : "NOT") available."
+    }
+}
+
