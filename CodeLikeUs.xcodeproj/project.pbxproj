@@ -29,6 +29,7 @@
 		B46304D420613BD0002F8F29 /* RecipesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B46304D320613BD0002F8F29 /* RecipesListViewController.swift */; };
 		B4EDDD1C20643885006688ED /* CookbookAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4EDDD1B20643884006688ED /* CookbookAPIService.swift */; };
 		B4EDDD1E206439F9006688ED /* Reqres.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4EDDD1D206439F8006688ED /* Reqres.framework */; };
+		B4EDDD2020643B0C006688ED /* Firebase+Reactive.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4EDDD1F20643B0C006688ED /* Firebase+Reactive.swift */; };
 		F777151528FF1536C7B81C87 /* Pods_CodeLikeUs.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC9EA000C00A1F48F7729EA0 /* Pods_CodeLikeUs.framework */; };
 /* End PBXBuildFile section */
 
@@ -62,6 +63,7 @@
 		B46304D320613BD0002F8F29 /* RecipesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesListViewController.swift; sourceTree = "<group>"; };
 		B4EDDD1B20643884006688ED /* CookbookAPIService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CookbookAPIService.swift; sourceTree = "<group>"; };
 		B4EDDD1D206439F8006688ED /* Reqres.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Reqres.framework; path = Carthage/Build/iOS/Reqres.framework; sourceTree = "<group>"; };
+		B4EDDD1F20643B0C006688ED /* Firebase+Reactive.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Firebase+Reactive.swift"; sourceTree = "<group>"; };
 		EC9EA000C00A1F48F7729EA0 /* Pods_CodeLikeUs.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CodeLikeUs.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -106,6 +108,7 @@
 		791E7CA1202353710069B58C /* CodeLikeUs */ = {
 			isa = PBXGroup;
 			children = (
+				B4230E20206152A700495C5F /* Extensions */,
 				B4230E1B20613C8F00495C5F /* Model */,
 				B46304CC20613A63002F8F29 /* Networking */,
 				B46304C920612C43002F8F29 /* ViewController */,
@@ -153,6 +156,14 @@
 				B4230E1C20613C9A00495C5F /* Recipe.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		B4230E20206152A700495C5F /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				B4EDDD1F20643B0C006688ED /* Firebase+Reactive.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		B46304C820612C32002F8F29 /* ViewModel */ = {
@@ -356,6 +367,7 @@
 				791E7CA5202353710069B58C /* LoginViewController.swift in Sources */,
 				B46304D420613BD0002F8F29 /* RecipesListViewController.swift in Sources */,
 				791E7CA3202353710069B58C /* AppDelegate.swift in Sources */,
+				B4EDDD2020643B0C006688ED /* Firebase+Reactive.swift in Sources */,
 				79D6DC0F202C917200E879CC /* Styles.swift in Sources */,
 				B4230E1D20613C9A00495C5F /* Recipe.swift in Sources */,
 			);
