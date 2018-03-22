@@ -19,6 +19,8 @@
 		79A471E420235ED500553F42 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 79A471E320235ED400553F42 /* GoogleService-Info.plist */; };
 		79A471EC2023606B00553F42 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79A471EA2023606B00553F42 /* RealmSwift.framework */; };
 		79A471ED2023606B00553F42 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79A471EB2023606B00553F42 /* Realm.framework */; };
+		79D6DC0D202C913C00E879CC /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79D6DC0C202C913C00E879CC /* SignUpViewController.swift */; };
+		79D6DC0F202C917200E879CC /* Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79D6DC0E202C917200E879CC /* Styles.swift */; };
 		F777151528FF1536C7B81C87 /* Pods_CodeLikeUs.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC9EA000C00A1F48F7729EA0 /* Pods_CodeLikeUs.framework */; };
 /* End PBXBuildFile section */
 
@@ -41,6 +43,8 @@
 		79A471E72023605C00553F42 /* Realm.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = Realm.framework.dSYM; path = Carthage/Build/iOS/Realm.framework.dSYM; sourceTree = "<group>"; };
 		79A471EA2023606B00553F42 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
 		79A471EB2023606B00553F42 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
+		79D6DC0C202C913C00E879CC /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		79D6DC0E202C917200E879CC /* Styles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Styles.swift; sourceTree = "<group>"; };
 		AAE837E14D61AA778E61E59A /* Pods-CodeLikeUs.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CodeLikeUs.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CodeLikeUs/Pods-CodeLikeUs.debug.xcconfig"; sourceTree = "<group>"; };
 		EC9EA000C00A1F48F7729EA0 /* Pods_CodeLikeUs.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CodeLikeUs.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -88,6 +92,8 @@
 				79A471E520235ED800553F42 /* Resources */,
 				791E7CA2202353710069B58C /* AppDelegate.swift */,
 				791E7CA4202353710069B58C /* LoginViewController.swift */,
+				79D6DC0C202C913C00E879CC /* SignUpViewController.swift */,
+				79D6DC0E202C917200E879CC /* Styles.swift */,
 			);
 			path = CodeLikeUs;
 			sourceTree = "<group>";
@@ -282,8 +288,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				79D6DC0D202C913C00E879CC /* SignUpViewController.swift in Sources */,
 				791E7CA5202353710069B58C /* LoginViewController.swift in Sources */,
 				791E7CA3202353710069B58C /* AppDelegate.swift in Sources */,
+				79D6DC0F202C917200E879CC /* Styles.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

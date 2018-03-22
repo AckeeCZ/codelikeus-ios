@@ -10,7 +10,7 @@
 import UIKit
 import SnapKit
 
-class LoginViewController: UIViewController {
+class SignUpViewController: UIViewController {
 
     override func loadView() {
         super.loadView()
@@ -30,11 +30,11 @@ class LoginViewController: UIViewController {
             passwordDescriptionLabel,
             passwordTextField,
             ])
-        let loginButton = UIButton()
-        let goToSignUpButton = UIButton()
+        let signUpButton = UIButton()
+        let goToLoginButton = UIButton()
         let buttonsHStack = UIStackView(arrangedSubviews: [
-            loginButton,
-            goToSignUpButton,
+            signUpButton,
+            goToLoginButton,
             ])
         let vStack = UIStackView(arrangedSubviews: [
             messageLabel,
@@ -55,7 +55,7 @@ class LoginViewController: UIViewController {
 
         messageLabel.textAlignment = .center
         messageLabel.font = .systemFont(ofSize: 30)
-        messageLabel.text = "Hello"
+        messageLabel.text = "Sign Up"
         self.messageLabel = messageLabel
         usernameDescriptionLabel.makeDescription()
         usernameDescriptionLabel.text = "Username"
@@ -79,12 +79,12 @@ class LoginViewController: UIViewController {
         passwordVStack.snp.makeConstraints { make in
             make.width.equalTo(view.safeAreaLayoutGuide).offset(-2 * padding)
         }
-        loginButton.setTitle("Login", for: .normal)
-        loginButton.setTitleColor(.blue, for: .normal)
-        self.loginButton = loginButton
-        goToSignUpButton.setTitle("Go to Sign Up", for: .normal)
-        goToSignUpButton.setTitleColor(.blue, for: .normal)
-        self.goToSignUpButton = goToSignUpButton
+        signUpButton.setTitle("Sign Up", for: .normal)
+        signUpButton.setTitleColor(.blue, for: .normal)
+        self.signUpButton = signUpButton
+        goToLoginButton.setTitle("Go to Login", for: .normal)
+        goToLoginButton.setTitleColor(.blue, for: .normal)
+        self.goToLoginButton = goToLoginButton
         buttonsHStack.axis = .horizontal
         buttonsHStack.spacing = smallHSpacing
         buttonsHStack.distribution = .fillEqually
@@ -105,21 +105,21 @@ class LoginViewController: UIViewController {
     weak var messageLabel: UILabel!
     weak var usernameTextField: UITextField!
     weak var passwordTextField: UITextField!
-    weak var loginButton: UIButton!
-    weak var goToSignUpButton: UIButton!
+    weak var signUpButton: UIButton!
+    weak var goToLoginButton: UIButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        goToSignUpButton.addTarget(self, action: #selector(goToSignUpTapped), for: .touchUpInside)
+        goToLoginButton.addTarget(self, action: #selector(goToLoginTapped), for: .touchUpInside)
 
     }
 
-    @objc func goToSignUpTapped() {
-        let signUpVC = SignUpViewController()
-        UIView.transition(from: view, to: signUpVC.view, duration: 1, options: [.transitionCrossDissolve], completion: {
+    @objc func goToLoginTapped() {
+        let loginVC = LoginViewController()
+        UIView.transition(from: view, to: loginVC.view, duration: 1, options: [.transitionCrossDissolve], completion: {
             _ in
-            UIApplication.shared.keyWindow?.rootViewController = signUpVC
+            UIApplication.shared.keyWindow?.rootViewController = loginVC
         })
     }
 
